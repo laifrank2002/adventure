@@ -27,15 +27,14 @@ function closeAll () {
 }
 // Instead of writing everything, you only need to write one thing, calcShow, plus the stage of the event and the Id of the event.
 function calcShow (stageNum,Id){
-	if (stage==stageNum){
-		document.getElementById(Id).style.display = "block";
-		stage = stageNum + 1;
-		lastCode=nextCode;
-		nextCode = Id;
-		
-		console.log(lastCode);
-		console.log(nextCode);
-	}
+	closeAll();
+	document.getElementById(Id).style.display = "block";
+	stage = stageNum + 1;
+	lastCode=nextCode;
+	nextCode = Id;
+	
+	console.log(lastCode);
+	console.log(nextCode);
 }
 // All the Show Functions so that things work!
 // Stage Codes 
@@ -83,14 +82,14 @@ function showSBA () {
 	calcShow(2,"SBA");
 }
 function showSBB () {
-	stage = 4;
-	calcShow(4,"SDCBB");
+	calcShow(2,"SBB");
 }
 function showSBC () {
 	showS();
 }
 function showSBD () {
-	calcShow(2,"SBD");
+	stage = 4;
+	calcShow(4,"SDCBB");
 }
 function showSBAA () {
 	stage = 3;
@@ -100,7 +99,7 @@ function showSBAAA () {
 	calcShow(4,"SBAAA");
 }
 function showSBAAB () {
-	calcShow(4,"SBAAB");
+	showL();
 }
 function showSBAAC () {
 	calcShow(4,"SBAAC");
