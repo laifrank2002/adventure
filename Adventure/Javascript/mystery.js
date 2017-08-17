@@ -1,6 +1,6 @@
 // TDL
 // Undo Button
-// Unlock Codes
+// Transferable Array of Saves
 
 
 var stage = 0;
@@ -96,7 +96,7 @@ function showSBAA () {
 	calcShow(3,"SBAA");
 }
 function showSBAAA () {
-	calcShow(4,"SBAAA");
+	showJ();
 }
 function showSBAAB () {
 	showL();
@@ -212,11 +212,13 @@ function showJCB () {
 	if (key) {
 		document.getElementById("keyBox").innerHTML = "You've already gotten the key though.";
 	}
+	key = true;
 }
 // Special Chest Function 
 function showJCAB () {
 	stage = 103;
 	calcShow(103,"JCAB");
+	console.log(key)
 	if (key) {
 		if (chestUnlocked){
 			document.getElementById("treasureBox").innerHTML = "You go down the tunnel, there, you see a chest with a lock. You try the key, and it works! Oh wait, you already unlocked it! Oh well."
