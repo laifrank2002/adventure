@@ -13,13 +13,39 @@
 
 <body>
 
-	<!-- Meat -->
+	<!-- This is where content goes -->
 	<div class = "content" onclick="trackClick()">
 		<div class = "info">
-			
 			<h1>Medieval Adventure</h1>
 			<p>A Text-based Adventure</p>
-			
+			<button type="button" onclick="StoryTab()">Story</button>
+			<button type="button" onclick="InventoryTab()">Inventory</button>
+			<button type="button" onclick="SettingsTab()">Settings</button>
+		</div>
+		
+		<div class = "info" id="inventory">
+			<h2>Inventory</h2>
+			<p>Any useful item you find will show up here. "Useful".</p>
+			<div class = "inventoryItem" id="whiskey">
+				<h3>Whiskey Bottle</h3>
+				<img src="Images/whiskey.jpg"/>
+				<p> You have <span id="whiskeyDisplay">0</span> bottle(s) of whiskey, all stolen from the same guard, probably.</p>
+			</div>
+			<div class = "inventoryItem" id="key">
+				<h3>Key</h3>
+				<img src="Images/key.jpg"/>
+				<p> You have <span id="keyDisplay">no</span> key, but you don't know which lock(s) it's for.</p>
+			</div>
+			<div class = "inventoryItem" id="coins">
+				<h3>Coins</h3>
+				<img src="Images/money.jpg"/>
+				<p> You have <span id="coinsDisplay">0</span> coins, pillaged from the guard's pension fund!</p>
+			</div>
+		</div>
+		<div class = "info" id="settings">
+		
+		</div>
+		<div class = "info" id="story">
 			<!-- First Box -->
 			<div class="infoBox" id="S">
 				<h2>Introduction</h2>
@@ -996,6 +1022,9 @@
 	<!-- Scripts, load after so that Ids can be used! -->
 	<!-- Allows for the game to work by concealment of objects. -->
 	<script src="Javascript/mystery.js"> </script>
+	<!-- Navigation change .info element script -->
+	<script src="Javascript/tabChange.js"> </script>
+		
 </body>
 
 </html>
