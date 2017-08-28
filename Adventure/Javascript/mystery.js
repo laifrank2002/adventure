@@ -15,10 +15,10 @@ var gold = 0;
 
 function trackClick() {
 	clicks ++;
+	document.getElementById("timesClicked").innerHTML = clicks + " times clicked!";
 }
 // Convience's sake, closes all infoBoxes! 
 function closeAll () {
-	
 	var Ids = ["S","SA","SB","SC","SD","SBA","SBB","SBBA","SBBB","SBBC","SBBD","SBBDB","SDA","SDAA","SDAB","SDB","SDBA","SDC","SDCB","SDCBB","SDCBBA","SDCBBB","SDCBBC","SDCBBD","K","KA","KB","KAB","KAC","KC","KD","KDA","SBAA","SBAB","SBABA","SBABAA","SBABAB","SBABAC","SBABABA","SBABABAA","SBABABAC","L","LB","LC","J","JA","JB","JC","JCA","JCAB","JCB","SBAAC","SBAAD","SBABB","SBC","SBABAC","KTB","KTC"]; // Array of things that will be hidden, just add Ids from the HTML
 	for (i = 0; i < Ids.length; i++){
 		document.getElementById(Ids[i]).style.display = "none";

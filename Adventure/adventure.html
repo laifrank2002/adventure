@@ -3,10 +3,9 @@
 
 <head>
 	
-	<title>A Small War</title>
+	<title>Medieval Adventure</title>
 	<meta charset = UTF-8/>
 	
-	<link rel="stylesheet" type="text/css" href="../CSS/style.css">
 	<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="CSS/adventure.css">
 </head>
@@ -39,11 +38,16 @@
 			<div class = "inventoryItem" id="coins">
 				<h3>Coins</h3>
 				<img src="Images/money.jpg"/>
-				<p> You have <span id="coinsDisplay">0</span> coins, pillaged from the guard's pension fund!</p>
+				<p> You have <span id="coinsDisplay">0</span> coins. Shiny!</p>
 			</div>
 		</div>
 		<div class = "info" id="settings">
-		
+			<h2>Settings</h2>
+			<p>View Stats, and save or load stuff.</p>
+			<button type="button" onclick="autoSave()">Save</button>
+			<button type="button" onclick="loadFile()">Load</button>
+			<button type="button" onclick="resetGame()">Total Reset</button>
+			<p id="timesClicked"></p>
 		</div>
 		<div class = "info" id="story">
 			<!-- First Box -->
@@ -1024,6 +1028,8 @@
 	<script src="Javascript/mystery.js"> </script>
 	<!-- Navigation change .info element script -->
 	<script src="Javascript/tabChange.js"> </script>
+	<!-- Saving Loading Script-->
+	<script src="Javascript/export.js"> </script>
 		
 </body>
 

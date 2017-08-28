@@ -1,6 +1,11 @@
 body {
-	font-family : monospace,"Times New Roman",serif;
+	font-family : Palatino,"Times New Roman",serif;
 	background-image : url("../Images/background.jpg");
+	background-attachment:fixed;
+    background-position: left top;
+	height : 100%;
+	overflow-x : visible;
+	overflow-y : scroll;
 }
 .content {
 	width : 600px;
@@ -8,6 +13,7 @@ body {
 }
 #inventory {
 	height : 600px;
+	overflow-y : scroll;
 }
 .inventoryItem { /* Different Text Boxes */
 	width : 225px;
@@ -31,7 +37,9 @@ body {
 	background-color : white; /* So that the player can see the content*/
 	padding : 5px;
 	box-shadow: 4px 8px 32px 4px rgba(0,0,0,0.2); /* Makes it look like paper */
-	overflow : auto;
+	overflow-x : visible; /* So tooltips don't get clipped */
+	/*overflow-y : scroll; /* So long dialogue doesn't get clipped */
+	padding : 10px;
 }
 .infoBox {
 	padding : 3px;
@@ -55,7 +63,7 @@ body {
 	border-radius: 6px;
 	/* Positioning */
 	position : absolute;
-	z-index: 1;
+	z-index: 2;
 	top: -5px;
     left: 105%;
 	width : 300px;
@@ -65,21 +73,24 @@ body {
 	content: " ";
     position: absolute;
     top: 50%;
+	z-index: 2;
     right: 100%; /* To the left of the tooltip */
     margin-top: -5px;
     border-width: 5px;
     border-style: solid;
     border-color: transparent grey transparent transparent;
+	
 }
 /* When hover, it will become visible */
 .tooltip:hover .tooltiptext {
 	visibility : visible;
+	
 }
 /*
  So buttons look nice
 */
 button {
-	text-decoration : underline;
+	text-decoration : none; /* No Decoration */
 	text-align : center;
 	border : none;
 	outline:none;
