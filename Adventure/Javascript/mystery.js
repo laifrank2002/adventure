@@ -12,6 +12,18 @@ var whiskey = 0;
 var key = false;
 var chestUnlocked = false;
 var gold = 0;
+// Undo Stats
+var historyCode = [];
+// Undo Button
+
+
+function undoLastStep () {
+	closeAll();
+	if(historyCode.length > 0){
+		document.getElementById(historyCode.pop()).style.display = "block";
+		stageNum -= 1;
+	}
+}
 
 function trackClick() {
 	clicks ++;
@@ -26,16 +38,25 @@ function closeAll () {
 }
 // Instead of writing everything, you only need to write one thing, calcShow, plus the stage of the event and the Id of the event.
 function calcShow (stageNum,Id){
-	closeAll();
-	document.getElementById(Id).style.display = "block";
-	stage = stageNum + 1;
-	lastCode=nextCode;
-	nextCode = Id;
-	
-	console.log(lastCode);
-	console.log(nextCode);
+	if (typeof Id === 'string' || Id instanceof String){ // Check if it's a string
+		closeAll();
+		document.getElementById(Id).style.display = "block";
+		// Increases Stage Number to ensure good progression
+		stage = stageNum + 1;
+		lastCode=nextCode;
+		nextCode = Id;
+		
+		console.log(lastCode);
+		console.log(nextCode);
+		// So undo button would work, push onto history another item
+		historyCode.push(Id);
+	}
+	else{
+		// do nothing
+		alert("Function /'calcShow/' has been passed a bad string");
+	}
 }
-// All the Show Functions so that things work!
+// All the Show Functions
 // Stage Codes 
 // 000s = S
 // 100s = J
